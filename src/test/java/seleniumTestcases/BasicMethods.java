@@ -1,6 +1,7 @@
 package seleniumTestcases;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Navigation;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasicMethods {
@@ -10,7 +11,9 @@ public class BasicMethods {
 		driver.navigate().to("https://redbus.com");
 		driver.navigate().to("https://google.com");
 		System.out.println(driver.getTitle());//google
-		driver.navigate().back();
+		//Navigation nav = driver.navigate();
+		//nav.back();
+		driver.navigate().back();//method chaining
 		System.out.println(driver.getTitle());//redbus
 		driver.navigate().forward();
 		System.out.println(driver.getTitle());//google
