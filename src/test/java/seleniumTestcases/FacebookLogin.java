@@ -10,6 +10,7 @@ public class FacebookLogin {
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		//implicitwait - presence condition only
 		driver.get("https://www.facebook.com/");
 		String title=driver.getTitle();
 		System.out.println(title);
@@ -27,8 +28,12 @@ public class FacebookLogin {
 		password.sendKeys("selenium123");
 		loginBtn.click();
 		
-		Thread.sleep(3000);
-		
+		//Thread.sleep(3000);//java
+		/*
+		 * implicitwait - 
+		 * explicitwait
+		 * 
+		 */
 		
 		WebElement errorMsg=driver.findElement(By.xpath("//*[@id=\"login_form\"]/div/div[1]/div/div[1]/div/div/div/div/div[2]/div/span"));
 		String errorMsgString=errorMsg.getText();
